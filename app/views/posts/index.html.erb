@@ -7,7 +7,8 @@
       <% @posts.each do |post| %>
         <br>
         <div class="card">
-          <h5 class="card-header"><%= post.title %></h5>
+          <h3 class="card-header"><%= link_to post.title, post%></h3>
+
           <div class="card-body">
             <p class="card-text"><%= post.description[0, 250] %></p>
           </div>
