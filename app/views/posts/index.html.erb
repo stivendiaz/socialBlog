@@ -9,7 +9,7 @@
         <div class="card">
           <h5 class="card-header"><%= post.title %></h5>
           <div class="card-body">
-            <p class="card-text"><%= post.description %></p>
+            <p class="card-text"><%= post.description[0, 250] %></p>
           </div>
           <div class="card-footer text-muted">
             publicado por ...
