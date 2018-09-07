@@ -34,6 +34,10 @@ gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'gravatar-ultimate'
+#traduce errores
+gem 'rails-i18n', '~> 5.1'
+#traduce devise
+gem 'devise-i18n'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
