@@ -5,8 +5,17 @@
       <div class="modal-header">
         <h4 class="modal-title text-center"><%= title %></h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
 
+      </div>
+      <% if @post.errors.any? %>
+        <div class="alert alert-danger">
+          <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
       <%= form_for @post, remote: true do |f| %>
       <div class="modal-body">
         <div class="alert alert-danger" role="alert" style="display: none;"></div> <!-- como se activa? -->
@@ -19,7 +28,7 @@
       </div>
 
       <div class="modal-footer">
-        <%= f.submit class: "btn btn-primary btn-lg btn-block" %>
+        <%= f.submit class: "btn btn-dark btn-lg btn-block" %>
       </div>
       <% end %>
     </div><!-- /.modal-content -->
