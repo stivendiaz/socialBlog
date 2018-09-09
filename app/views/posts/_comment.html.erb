@@ -1,7 +1,7 @@
 <div class="card">
   <h5 class="card-header"><%= comment.user.email %> comento</h5>
   <div class="card-body">
-    <p class="card-text"><%= comment.body %></p>
+    <p class="card-text"><%= markdown(comment.body) %></p>
   </div>
 </div>
 <br>

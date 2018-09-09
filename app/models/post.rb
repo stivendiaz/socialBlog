@@ -12,8 +12,8 @@
 
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
   validates :title, presence: true
   validates :description, presence: true
-  # validates :description, length: { minimum: 250 }
+  validates :description, length: { minimum: 250 }
 end
