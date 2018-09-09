@@ -1,0 +1,14 @@
+<% if @post.errors.empty? %>
+$('.new_post').append(' <%= j render "row", post: @post %>');
+$('#post-modal').modal('hide');
+
+<% if @post.save %>
+<% flash[:success] = "El post ha sido creado con éxito" %>
+<% end %>
+$('.alerta').append('<div class="alert alert-success"><%= flash[:success] %> <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+<% else %>
+
+
+$('.errors_validation').append('<div class="alert alert-danger"><ul><% @post.errors.full_messages.each do |msg| %><li><%= msg %></li><% end %></ul></div>')
+
+<% end %>
