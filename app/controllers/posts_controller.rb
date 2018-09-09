@@ -23,18 +23,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    if post.update(post_params)
-      redirect_to posts_path, notice: "El post ha sido modificado con éxito"
-    else
-      render :edit
-    end
+    @post = Post.update(params[:id], post_params)
   end
   def destroy
     post = Post.find(params[:id])
     post.destroy
 
-    redirect_to posts_path, notice: "El post fue eliminado con éxito"
+    redirect_to posts_path#, notice: "El post fue eliminado con éxito"
   end
 
 

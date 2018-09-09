@@ -1,4 +1,4 @@
-<div class="card box-shadow" id="<%= post.id %>">
+<div id="<%= post.id %>" class="card box-shadow">
   <div class="card-header">
     <div class="row">
       <div class="col-sm-8 ">
@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="card-body">
-    <p class="card-text text-dark"><%= post.description[0, 250] %></p>
+    <p class="card-text text-dark"><%= markdown(post.description[0, 250]) %></p>
 
   </div>
   <div class="card-footer text-muted">

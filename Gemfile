@@ -39,6 +39,7 @@ gem 'rails-i18n', '~> 5.1'
 #traduce devise
 gem 'devise-i18n'
 gem 'pry'
+gem 'redcarpet'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
