@@ -6,6 +6,7 @@
   $('#post-modal').modal('hide');
 <% else %>
 
-  // alert('<%= @post.errors.full_messages[0] %>');
-// $('.errors_validation').append('<div class="alert alert-danger"><ul><% @post.errors.full_messages.each do |msg| %><li><%= msg %></li><% end %></ul></div>')
+<% @post.errors.full_messages.each do |msg| %>
+  growl("danger", "<%= msg%>", '.errors_validation');
+<% end %>
 <% end %>

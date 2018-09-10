@@ -11,7 +11,6 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     @post.save
-
   end
 
   def show
@@ -26,15 +25,9 @@ class PostsController < ApplicationController
     @post = Post.update(params[:id], post_params)
   end
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
-
-    redirect_to posts_path#, notice: "El post fue eliminado con éxito"
+    @post = Post.find(params[:id])
+    @post.destroy
   end
-
-
-
-
 
   private
   def post_params

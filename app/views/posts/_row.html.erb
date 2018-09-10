@@ -7,7 +7,7 @@
       <div class="col-sm-4 text-right edit_delete">
         <% if user_signed_in? && current_user.id == post.user_id%>
         <%= link_to "Editar", edit_post_path(post), remote: true, :class => "text-muted"   %>
-        <%= link_to "Eliminar", post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este producto?" }, :class => "text-muted"  %>
+        <%= link_to "Eliminar", post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este producto?", remote: true }, :class => "text-muted"  %>
         <% end %>
 
       </div>
