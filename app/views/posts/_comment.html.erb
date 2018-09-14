@@ -1,5 +1,6 @@
 <div class="card">
-  <h5 class="card-header"><%= comment.user.email %> comento</h5>
+    <%total_seconds = ((comment.created_at-DateTime.now)/1.minutes).round.abs  %>
+  <h5 class="card-header"><%= comment.user.email %> comento hace <%= Time.at(total_seconds).utc.strftime("%H:%M:%S")%> Horas</h5>
   <div class="card-body">
     <p class="card-text"><%= markdown(comment.body) %></p>
   </div>

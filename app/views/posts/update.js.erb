@@ -2,7 +2,7 @@
 <% if @post.errors.empty? %>
   // add the row to the table, show alert and hide modal
   $('.new_post div#<%= @post.id %>').replaceWith(' <%= j render "row", post: @post %>');
-  growl("success", "El post ha sido modificado con éxito!", '.alerta')
+  growl("success", "El post ha sido modificado con éxito!", '.alerta_index')
   $('#post-modal').modal('hide');
 <% else %>
 

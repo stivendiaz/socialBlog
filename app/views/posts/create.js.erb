@@ -1,6 +1,6 @@
 <% if @post.errors.empty? %>
   $('.new_post').append(' <%= j render "row", post: @post %>');
-  growl("success", "El post ha sido creado con éxito!", '.alerta');
+  growl("success", "El post ha sido creado con éxito!", '.alerta_index');
   $('#post-modal').modal('hide');
 
 <% else %>
