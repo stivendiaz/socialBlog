@@ -20,10 +20,11 @@ gem 'rails-i18n', '~> 5.1'
 gem 'devise-i18n'
 gem 'pry'
 gem 'redcarpet'
+gem 'xmlrpc'
 
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'sqlite3', git: "https://github.com/larskanis/sqlite3-ruby", branch: "add-gemspec"
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'

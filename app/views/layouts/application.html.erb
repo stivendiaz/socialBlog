@@ -6,12 +6,13 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type => "image/x-icon" %>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom box-shadow">
-    <%= link_to "MassBlog", root_path, class: "navbar-brand " %>
+  <nav class="navbar bg-primary navbar-dark navbar-expand-sm border-bottom box-shadow">
+    <%= link_to "SuperBlog", root_path, class: "navbar-brand " %>
 
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +23,7 @@
 
       <ul class="navbar-nav ml-auto ">
         <% if user_signed_in? %>
-        <li class="nav-link text-muted"><%=current_user.email%></li>
+        <li class="nav-link"><%=current_user.email%></li>
         <li class="nav-item">
           <%= link_to "Salir", destroy_user_session_path, method: "delete", :class => "nav-link"  %>
         </li>

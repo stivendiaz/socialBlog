@@ -33,3 +33,90 @@ body {
   margin-bottom: 15px;
   padding: 7px 9px;
 }
+
+
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700');
+
+a,
+a:hover,
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h2 {
+  float: left;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+h2 span {
+  display: block;
+  font-size: 45px;
+  text-transform: none;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+h2 a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.card {
+  -moz-box-direction: normal;
+  -moz-box-orient: horizontal;
+  border-radius: 0.25rem;
+}
+
+.card-header {
+  display: flex;
+}
+
+.card-header-content {
+  flex: 1;
+  padding-left: 1rem;
+}
+
+.card-title {
+  margin: 0 0 0px;
+  font-size: 20px;
+  font-family: "Slabo 27px", serif;
+  font-weight: bold;
+  color: #000000;
+}
+
+.card-author {
+  margin: 0;
+  color: #565656;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+}
+
+.card-action {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  color: #195c9d;
+}
+
+.card-block {
+  padding: 20px;
+  color: #232323;
+  background-color: #fff;
+  box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.1);
+  border-top: 1px soild #000;
+  border-radius: 0;
+}

@@ -1,23 +1,29 @@
 <div class="alerta_index">
 </div>
 <% if flash[:notice] %>
-  <div class="alert alert-success alert-dismissible fade show"><button type="button" class="close" data-dismiss="alert">&times;</button><%= flash[:notice] %></div>
+<div class="alert alert-success alert-dismissible fade show"><button type="button" class="close" data-dismiss="alert">&times;</button>
+  <%= flash[:notice] %>
+</div>
 <% end %>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="text-right">
+<section>
+  <div class="container">
+    <div class="row">
 
-        <% if user_signed_in? %>
-          <%= link_to "Publicar Post", new_post_path, remote: true, class: "btn btn-outline-dark btn-sm" %>
-        <% end %>
-      </div>
-      <br>
-      <div class="new_post">
-        <% @posts.each do |post| %>
-          <%= render "row", post: post %>
-        <% end %>
+      <div class="col-md-10 offset-md-1">
+        <div class="bd-example" data-example-id="">
+          <div id="accordion" role="tablist" aria-multiselectable="true">
+
+            <% if user_signed_in? %>
+            <%= link_to "Publicar Post", new_post_path, remote: true, class: "btn btn-outline-dark btn-sm" %>
+            <% end %>
+          </div>
+          <br>
+          <div class="new_post">
+            <% @posts.each do |post| %>
+            <%= render "row", post: post %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>

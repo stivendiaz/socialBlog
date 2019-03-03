@@ -1,28 +1,42 @@
-<div id="<%= post.id %>" class="card box-shadow">
-  <div class="card-header">
-    <div class="row">
-      <div class="col-sm-8 ">
-        <h3><%= link_to post.title, post, :class => "text-dark"  %></h3>
-      </div>
-      <div class="col-sm-4 text-right edit_delete">
-        <% if user_signed_in? && current_user.id == post.user_id%>
-        <%= link_to "Editar", edit_post_path(post), remote: true, :class => "text-muted"   %>
-        <%= link_to "Eliminar", post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este producto?", remote: true }, :class => "text-muted"  %>
-        <% end %>
+<div id="<%= post.id %>" class="card">
+    <div role="tab" id="heading<%= post.id %>">
+        <div class="card-header">
+        <i class="card-action fa fa-file-text-o" aria-hidden="true"></i>
+        <a
+            data-toggle="collapse"
+            data-parent="#accordion"
+            href="#collapse<%= post.id %>"
+            aria-expanded="false"
+            aria-controls="collapse<%= post.id %>"
+            class="card-header-content collapsed"
+        >
+            <div>
+            <h3 class="card-title"><%=post.title%></h3>
+            <p class="card-author"><%= post.user.email %> Hace <%=calculateTime(post.created_at)%></p>
+            </div>
+        </a>
+        <div class="card-actions">              
+            <% if user_signed_in? && current_user.id == post.user_id%>
+                <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este producto?", remote: true }, :class => "card-action"  %>
+                <%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_post_path(post), remote: true, :class => "card-action"   %>
+            <% end %>
+            <%= link_to '<i class="fa fa-angle-right" aria-hidden="true"></i>'.html_safe, post, :class => "card-action"  %>
 
-      </div>
+        </div>
+        </div>
     </div>
-  </div>
-  <div class="card-body">
-    <p class="card-text text-dark"><%= markdown(post.description[0, 250]) %></p>
 
-  </div>
-  <div class="card-footer text-muted">
-    <%total_seconds = ((post.created_at-DateTime.now)/1.minutes).round.abs  %>
-    <p>
-      Publicado por <%= post.user.email %>   hace:
-      <%= Time.at(total_seconds).utc.strftime("%H:%M:%S")%> Horas
-    </p>
-  </div>
+    <div
+        id="collapse<%= post.id %>"
+        class="collapse"
+        role="tabpanel"
+        aria-labelledby="heading<%= post.id %>"
+        aria-expanded="false"
+        style=""
+    >
+        <div class="card-block">
+        <%= markdown(post.description[0, 250]) %>
+        </div>
+    </div>
 </div>
-<br>
+
